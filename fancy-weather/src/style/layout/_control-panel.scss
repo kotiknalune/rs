@@ -1,0 +1,14 @@
+.controls {
+    justify-content: flex-start;
+}
+
+.lang {
+    position: relative;
+    margin-left: 1rem;
+    display: flex;
+}
+
+.search {
+    position: relative;
+    @include flex(row, flex-end);
+}

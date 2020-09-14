@@ -1,0 +1,134 @@
+.button {
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+
+    width: $button-size;
+    height: $button-size;
+
+    @include flex(row, center);
+
+    border-radius: $r;
+    background: transparentize($button-hover-bg, 1 - 0.7);
+    
+    font-family: inherit;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: $text-color;
+    text-transform: uppercase;
+
+    transition: all .2s;
+
+    & svg, & p, & div  {
+        cursor: pointer;
+    }
+
+    &:hover {
+        background-color:$button-hover-bg;
+    }
+    &:active, &.active {
+        background-color:transparentize($button-highlight, 0.5);
+    }
+    &.inactive {
+        background:$button-inactive-bg;
+        color:transparentize($text-color, 1 - 0.7);
+        box-shadow: inset 2px 1px 4px $button-speech-color;
+    }
+    &.button_c {
+        margin-left: $left-margin;
+        border-radius: $r 0 0 $r;
+    }
+    &.button_f {
+        border-radius: 0 $r $r 0;
+    }
+}
+.button_update {
+    background:transparentize($button-hover-bg, 1 - 0.7) url('/src/assets/reload-bg.svg') no-repeat bottom;
+    background-size: $button-size;
+
+    & .reload {
+        width: 2rem;
+        height: 2rem;
+        background: url('/src/assets/reload.svg') 50% no-repeat;
+
+        &.spin {
+            animation: spin 1.5s ease-in-out;
+            animation-iteration-count: infinite;
+        }
+    }
+}
+
+.button__arrow {
+    width: 1.3rem;
+    height: 1.3rem;
+    margin-left: $left-margin;
+    background: url('/src/assets/arrow.svg') 50% no-repeat;
+    &.arrow_opened {
+       transform: scaleY(-1);
+    }
+}
+
+.button_language {
+    width: 4rem;
+    border-radius: 0;
+
+    &:nth-child(1) {
+        border-radius: $r 0 0 $r;
+    }
+
+    &:nth-child(2) {
+        border-left: 1px solid $button-border;
+        border-right: 1px solid $button-border;
+    }
+
+    &:nth-child(3) {
+        border-radius: 0 $r $r 0;
+    }
+}
+
+.button_search {
+    width: 10rem; 
+    height: 4rem;
+    margin-left: 0;
+    border-radius: 0 $r $r 0;
+}
+
+.button_speech {
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: transparentize($text-color, 1 - 0.7);
+    color: $button-speech-color;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin-left: $left-margin;
+
+    &:hover {
+        box-shadow: 0px 0px 2rem $button-highlight;
+        background-color: transparentize($button-highlight, 1- 0.45);
+        color: transparentize($text-color, 1 - 0.90);
+    }
+}
+
+.button_traffic {
+    width: 15rem;
+    padding: $r;
+    cursor: pointer;
+    & p {
+        font-size: 1.8rem;
+        margin-left: $left-margin;
+    }
+}
+
+.button__voice-play {
+    border-radius: $r 0 0 $r;
+    margin-left: 3rem;
+    border-right: 1px solid grey;
+}
+
+.button__voice-pause {
+    border-radius: 0 $r $r 0;
+}
+
+.button_current-location {
+    margin-left: $left-margin;
+}

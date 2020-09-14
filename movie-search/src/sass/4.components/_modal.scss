@@ -1,0 +1,88 @@
+.modal {
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    z-index: 5;
+    background: linear-gradient(to top, #1f7d92, #000000ea);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    & h3.modal__title {
+    color: $highlight-color;
+    font-size: 2rem;
+    margin: 0;
+    text-transform: uppercase;
+
+    @include breakpoint('xl') {
+        font-size: 3rem;
+      }
+    }
+
+    & p.modal__text {
+    color: $text-color;
+
+    width: 75%;
+    height: 60%;
+
+    line-height: 2em;
+    font-size: 1.5rem;
+    text-align: left;
+
+    border-left: 3px solid $highlight-color;
+    padding-left: 10px;
+    margin: 10px 0px 20px 0px;
+
+    overflow-y: scroll;
+        &::-webkit-scrollbar {
+            opacity: 0;
+        }
+
+    }
+
+    & p.modal__genre {
+        color: $highlight-color;
+        font-size: 1.2rem;
+        margin: 5px;
+        width: 85%;
+
+        @include breakpoint('xl') {
+            font-size: 1.8rem;
+          }
+    }
+    
+    & a.modal__link {
+    border: 1px solid $highlight-color;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    @include breakpoint('xs') {
+        top:4px;
+        right:25px;
+    }
+
+    @include breakpoint('xl') {
+        font-size: 2rem;
+      }
+        &:hover {
+        background: $highlight-color;
+        color: $dark-color;
+        }
+    }
+
+    & button.modal__button {
+    height: 30px;
+    top: 0;
+    right: 0;
+    border: none;
+    background: $highlight-color;
+    transition: 0.3s ease;
+
+    @include breakpoint('xs') {
+        height: 25px;
+        top: 5px;
+    }
+    }
+}

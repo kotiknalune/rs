@@ -1,0 +1,31 @@
+// Page
+$body-bg:#212c3a;
+
+// Typography
+$font-family:'Lato', Verdana, sans-serif;
+$text-color: #ffffff;
+$highlight-color: #ffd230;
+$alpha-highlight-color:#ffd23060;
+$dark-color: #333333;
+
+$title-color:#83e8ff;
+$title-shadow: #008abf;
+
+// Swiper
+$swiper-bg: $title-color;
+$slide-bg: #000000;
+
+// Buttons 
+$button-hover-color:#d4af2c;
+$button-disabled-bg:#dedede;
+
+%background-img {
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+%pseudoelement{
+    content: '';
+    display: inline-block;
+    position: relative;
+}

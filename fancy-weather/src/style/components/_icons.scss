@@ -1,0 +1,47 @@
+svg {
+    width: 4rem;
+    height: 4rem;
+    fill: $text-color;
+    transition: border-radius 250ms ease,
+                box-shadow 300ms ease,
+                fill 350ms ease;
+    &:hover {
+      fill: $button-highlight;
+      box-shadow: 1px 1px 3rem $button-highlight;
+      border-radius: 50%;
+    }
+}
+
+.covid__icon {
+    display: block;
+    height: 5rem;
+    width: 5rem;
+
+    margin: 0;
+    padding: 0.5rem;
+    border-radius: 50%;
+
+    background:transparentize($button-speech-color, 0.25);
+    cursor: pointer;
+}
+
+.covid__info, .covid__text, .covid__disclaimer {
+  display:flex;
+}
+
+.covid__text, .covid__disclaimer {
+  flex-direction: column;
+}
+
+.covid__info {
+  @media (min-width: 320px) and (max-width: 500px) {
+    width: 95%;
+    justify-content: center;
+    border: 1px solid #0000007d;
+    border-radius: 0.5rem;
+
+    &:nth-child(2) {
+      margin: 1rem;
+    }
+  }
+}

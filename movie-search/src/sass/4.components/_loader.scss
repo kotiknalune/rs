@@ -1,0 +1,62 @@
+.loader-wrapper {
+    width: 99.85%;
+    height: 100%;
+    position: absolute;
+    z-index: 300;
+    left: 0;
+    top: 0;
+    @include flex(column, center);
+   
+    transition: 0.3s ease;
+    visibility:hidden;
+    opacity: 0;
+  
+    .loader {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        border: 3px solid $slide-bg;
+        overflow: hidden;
+        border-radius: 50%;
+        box-shadow: -5px -5px 5px rgba(255, 255, 255, 0.1),
+          10px 10px 10px rgba(0, 0, 0, 0.4),
+          inset -5px -5px 5px rgba(255, 255, 255, 0.2),
+          inset 10px 10px 10px rgba(0, 0, 0, 0.4);
+        
+          &:before {
+            content: "";
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            right: 25px;
+            bottom: 25px;
+            z-index: 10;
+            background: $slide-bg;
+            border-radius: 50%;
+            border: 2px solid $slide-bg;
+            box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.2),
+              inset 3px 3px 5px rgba(0, 0, 0, 0.5);
+          }
+          
+          & span {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-image: linear-gradient(-225deg, $highlight-color  0%, transparent 100%);
+            z-index: -1;
+            animation: spin 0.5s linear infinite;
+          }
+      }
+  
+    &.show-loader {
+      visibility:visible;
+      opacity: 1;
+    }
+  }
+  
+
+  
+  
+  
+  

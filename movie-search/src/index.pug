@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+html(lang="en-US")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1")
+        link(href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet")
+        title Movie Finder
+    body.pattern-grid-lg
+        .splash.pattern-grid-lg
+        header.header
+            h1.title.header__title(data-text="Movie Finder") 
+                a(href="/") Movie Finder
+        main.main
+            .search-container
+                p.info
+                form.search-form(id="search-form")
+                    input(type="text" id="search-bar" placeholder="Let's find a movie..." autocomplete="off" autofocus)
+                    button(type="button").reset
+                        i.fas.fa-times
+                    button(type="button").submit
+                        span.fa.fa-search
+                    button(type="button").mic
+                        i.fas.fa-microphone
+                    button(type="button").keyboard
+                        i.fas.fa-keyboard
+            .virtual-keyboard
+            .search-text
+            .swiper-container
+                .loader-wrapper.show-loader
+                    .loader
+                        span
+                .swiper-wrapper
+                .swiper-pagination
+            .swiper-button-next
+            .swiper-button-prev
+            .search-info
+                p.total-results
+                p.current-page
+        footer.footer
+            .footer__copyright
+                a(href="https://rs.school/" target="_blank") RS School 2020Q1
+            .contacts
+                a(href="https://github.com/kotiknalune" target="_blank").github kotiknalune

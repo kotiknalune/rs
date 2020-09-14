@@ -1,0 +1,23 @@
+html, body, div, p, button, ul, li, input {
+	all: initial;
+	box-sizing: border-box;
+	font-size: 62.5%;
+}
+
+body {
+	@include flex(row, center);
+	align-items: stretch;
+
+	min-height: 100vh;
+
+	font-family: 'Roboto', sans-serif;
+	font-size: 1rem;
+
+	background-color: $button-speech-color;
+	background-image: url('https://images.unsplash.com/photo-1534088568595-a066f410bcda?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1889&q=80');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	
+	transition: 1.5s ease-in-out;
+}

@@ -1,0 +1,134 @@
+.daily-forecast, .health-update, .location-map, .forecast {
+    backdrop-filter: blur($r);
+    border-radius: 10px;
+    padding: 0 1.5rem;
+    box-shadow: 1px 1px 3px $main-secondary-bg, 
+                inset 1px 1px 2px transparentize($text-color, 1 - 0.35);
+
+    height: 100%;
+    margin-top: 1rem;
+}
+   
+.daily-forecast .box__content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    text-transform: uppercase;
+
+    & .location, & .date-time {
+        margin-top: 1rem;
+    }
+
+    & .date {
+        margin-top: 1rem;
+    }
+
+    & .current-temperature {
+        display:flex;
+        justify-content: center;
+    }
+
+    & .weather-icon {
+        width: 17rem;
+        height: 17rem;
+        transform: translateY(-20%);
+    }
+
+    & .weather-information {
+        transform: translateY(-20%);
+        display: flex;
+        justify-content: space-evenly;
+
+        & p {
+            display: block;
+            font-variant: all-small-caps;
+            font-weight: 700;
+
+            &.wind::before, &.humidity::before {
+                content: '';
+                height: 2rem;
+                width: 2rem;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                display: inline-block;
+                margin-right: 1rem;
+            }
+
+            &.humidity::before {
+                background-image: url('/src/assets/humidity.svg');
+            }
+
+            &.wind::before {
+                background-image: url('/src/assets/wind.svg');
+            }
+        }
+    }
+}
+
+.forecast {
+    height: 100%; 
+    width: 33%;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(0px, 1fr) );
+    grid-template-rows: repeat( auto-fit, minmax(45px, 1fr) );
+    grid-template-areas: "forecast__day forecast__day" "forecast__info forecast__details";
+  }
+  
+.forecast__day { grid-area: forecast__day; }
+
+.forecast {
+    & .forecast__info {
+        grid-area: forecast__info;
+        display: flex;
+        & .forecast__icon {
+            position: relative;
+            height: 5rem;
+            width: 5rem;
+            top: -1.5rem;
+            left: -4.5rem;
+        }
+    }
+
+    & .forecast__details {
+        grid-area: forecast__details;
+        @include flex(column, center);
+        align-items: flex-end;
+
+        @media (min-width: 320px) and (max-width: 499px) {
+           display:none;
+         }
+
+        
+        & p {
+        font-size: 2rem;
+        }
+    }
+    & h3 {
+        font-size: 2.5rem;
+        margin: 0;
+        font-weight: 700;
+        text-align: center;
+        font-variant: all-small-caps;
+
+         @media (min-width: 320px) and (max-width: 499px) {
+            font-size: 1.8rem;
+         }
+    }
+    & h2 {
+        font-size:  5rem;
+
+        @media (min-width: 320px) and (max-width: 499px) {
+            font-size: 4rem;
+            z-index: 10;
+            text-shadow: 2px 0px 0px #000000ad;
+          }
+    }
+    &:nth-child(2) {
+        margin:0px 15px 0px;
+    }
+}
+.date-time .time {
+  margin-left:1rem;
+}

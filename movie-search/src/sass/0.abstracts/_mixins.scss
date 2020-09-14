@@ -1,0 +1,59 @@
+@mixin gradient($base-color, $color2, $color3, $direction) {
+    background: $base-color; 
+    background: -webkit-linear-gradient(to $direction, $color3, $color2, $base-color);  
+    background: linear-gradient(to $direction, $color3, $color2, $base-color); 
+}
+
+@mixin flex($direction, $justify: flex-start) {
+    display: flex;
+    align-items: center;
+    flex-direction: $direction;
+    justify-content: $justify;
+}
+
+@mixin breakpoint($breakpoint) {
+  $breakpoints: (
+    'xs': 320px,
+    's': 480px,
+    'm': 768px,
+    'ml': 1020px,
+    'l': 1536px,
+    'xl': 1920px
+  ) !default;
+
+  @if ($breakpoint == 'xs') {
+    @media screen and (min-width: map-get($breakpoints, 'xs')) and (max-width: map-get($breakpoints, 's')) {
+      @content;
+    }
+  }
+
+  @else if ($breakpoint == 's') {
+    @media screen and (min-width: map-get($breakpoints, 's')) and (max-width: map-get($breakpoints, 'm')) {
+      @content;
+    }
+  }
+
+  @else if ($breakpoint == 'm') {
+    @media screen and (min-width: map-get($breakpoints, 'm')) and (max-width: map-get($breakpoints, 'ml')) {
+      @content;
+    }
+  }
+
+  @else if ($breakpoint == 'ml') {
+    @media screen and (min-width: map-get($breakpoints, 'ml')) and (max-width: map-get($breakpoints, 'l')) {
+      @content;
+    }
+  }
+
+  @else if ($breakpoint == 'l') {
+    @media screen and (min-width: map-get($breakpoints, 'l') + 1px) and (max-width: map-get($breakpoints, 'xl')) {
+      @content;
+    }
+  }
+
+  @else if ($breakpoint == 'xl') {
+    @media screen and (min-width: map-get($breakpoints, 'xl')) {
+      @content;
+    }
+  }
+}

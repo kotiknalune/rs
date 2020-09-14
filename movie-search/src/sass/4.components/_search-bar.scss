@@ -1,0 +1,194 @@
+.search-container {
+  max-width: 815px;
+  @include flex(column, center);
+  margin-bottom: 10px;
+}
+
+.search-form{
+  width: 700px;
+  display: block;
+  position: relative;
+  
+  background: $highlight-color;
+  border-radius: 15px;
+  box-shadow: 0px -5px 120px #a5a52f;
+  
+  transform: 0.3s ease;
+
+  @include breakpoint('xs') {
+    border-radius: 0%;
+    width: 320px;
+    margin-top: 5px;
+  }
+
+  @include breakpoint('xl') {
+    width: 800px;
+  }
+
+  @include breakpoint('s') {
+    width: 400px;
+    border-radius: 10px;
+  }
+
+  @include breakpoint('m') {
+    width: 500px;
+    border-radius: 10px;
+  }
+
+  @include breakpoint('ml') {
+    width: 822px;
+  }
+}
+  
+button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 33px;
+    width: 3.2rem;
+
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid $button-hover-color;
+
+    transition: 0.3s ease;
+    
+    text-align: center;
+    font-size: 2rem;
+    color:$dark-color;
+
+    @include breakpoint('xs') {
+      width: 2.5rem;
+      font-size:1.5rem;
+      right:31px;
+    }
+
+    &:hover {
+      background-color:$button-hover-color;
+    }
+    &.submit {
+      right: 66px;
+      border-right: none;
+      
+      @include breakpoint('xs') {
+        right:59px;
+      }
+    }
+    &.keyboard {
+      right: 0px;
+      width: 3.5rem;
+      border: none;
+      border-bottom-right-radius: 15px;
+      border-top-right-radius: 15px;
+      
+      @include breakpoint('xs') {
+       border-radius: 0%;
+       right: -1px;
+      }
+
+      @include breakpoint('s') {
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+    }
+    &.reset {
+      right: 97px;
+      border: none;
+      background-color:$button-disabled-bg;
+
+      @include breakpoint('xs') {
+        right: 84px;
+       }
+    }
+  }
+
+input#search-bar {
+  margin: 0 auto;
+  width: 83%;
+  height: 40px;
+  padding-left: 20px;
+  font-size: 2rem;
+  border: 1px solid $highlight-color;
+  outline: none;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+  transition: 0.3s ease;
+
+  @include breakpoint('xs') {
+    width: 64%;
+    height: 30px;
+    padding-left: 10px;
+    font-size: 1.2rem;
+    border-radius:0%;
+   }
+
+   @include breakpoint('s') {
+    width: 70%;
+    height: 35px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+   }
+
+  @include breakpoint('m') {
+      width: 75%;
+      height: 35px;
+      border-bottom-left-radius: 10px;
+      border-top-left-radius: 10px;
+    }
+
+    @include breakpoint('ml') {
+      width: 82%;
+    }
+
+
+  &:focus{
+    border: 1px solid transparent;
+    color: #008ABF;
+    box-shadow: 0px 0px 10px #83e8ff;
+    background: $text-color;
+
+    &::-webkit-input-placeholder, &::-moz-placeholder, &:-ms-placeholder{
+      transition: opacity 0.45s ease; 
+      opacity: 0;
+    }
+  }
+}
+
+.info {
+  text-align: center;
+  font-size: 1.2rem;
+  color: $highlight-color;
+  align-self: flex-end;
+  margin-bottom: 5px;
+  text-transform: lowercase;
+
+  @include breakpoint('xs') {
+    align-self:center;
+   }
+}
+
+.search-text {
+  width: 84%;
+
+  @include breakpoint('xs') {
+    width: 94%;
+   }
+  
+  & p {
+    @extend%hide-overflow;
+    font-size: 1.5rem;
+    color: $text-color;
+    margin-bottom: 5px;
+    height: 20px;
+
+    @include breakpoint('xs') {
+      font-size: 1.2rem;
+      text-align: center;
+     }
+    & span.search-text__query {
+      font-style: italic;
+      color: $highlight-color;
+    }
+  }
+}

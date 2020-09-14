@@ -1,0 +1,31 @@
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+    80% {
+        transform: rotate(400deg);
+    }
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+@keyframes zoom-in {
+	50% {
+		width: 100px;
+	}
+	60% {
+		width: 100px * 0.9;
+	}
+	100% {
+		width: 500%;
+	}
+}
+@keyframes fade-out {
+	0%, 85% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}

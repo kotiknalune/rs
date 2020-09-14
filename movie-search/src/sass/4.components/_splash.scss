@@ -1,0 +1,16 @@
+.splash {
+    height: 100vh;
+    width: 100vw;
+
+    z-index: 50;
+    position: absolute;
+
+    @include flex(row, center);
+    background-color: $body-bg;
+    transition: 1s ease;
+
+    &.no-opacity {
+        z-index: -100;
+        opacity: 0;
+      }
+}

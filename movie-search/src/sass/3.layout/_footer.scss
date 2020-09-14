@@ -1,0 +1,59 @@
+.footer__copyright, .contacts{
+    height: 40px;
+    background-color: #83e8ff17;
+    width: 160px;
+    display: flex;
+    justify-content: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: #83e8ff66 solid 1px;
+    border-bottom: none;
+
+    @include breakpoint('xs') {
+        height: 33px;
+        width: 150px;
+    }
+}
+
+.contacts .github {
+    cursor: pointer;
+    line-height: 4rem;
+
+    @include breakpoint('xs') {
+        line-height: 3.5rem;
+    }
+
+    &:before {
+        @extend%pseudoelement;
+        width: 20px;
+        height: 20px;
+        top: 5px;
+        left: -5px;
+
+        background-image: url(https://svgshare.com/i/KXb.svg);
+        @extend%background-img;
+        background-size: contain;
+    }
+}
+
+.footer__copyright a {
+    cursor: pointer;
+    line-height: 4rem;
+
+    @include breakpoint('xs') {
+        line-height: 3.5rem;
+    }
+    &:before {
+        @extend%pseudoelement;
+        width: 40px;
+        height: 20px;
+        top: 5px;
+        left: 0px;
+
+        background-image: url(https://svgshare.com/i/KXJ.svg);
+        @extend%background-img;
+        background-size: cover;
+    }
+}
+
+

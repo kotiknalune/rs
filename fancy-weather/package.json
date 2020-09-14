@@ -1,0 +1,58 @@
+{
+  "name": "fancy-weather",
+  "version": "1.0.0",
+  "description": "A weather forecast app",
+  "main": "src/js/script.js",
+  "scripts": {
+    "style": "./node_modules/.bin/sass --watch src/style/main.scss src/style/style.css",
+    "html": "./node_modules/.bin/pug -w ./src -o ./src -P",
+    "dev": "webpack --mode development",
+    "prod": "webpack --mode production",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rolling-scopes-school/kotiknalune-RS2020Q1/tree/fancy-weather"
+  },
+  "keywords": [],
+  "author": "Railian Katerina <katerina.railian@mail.ru>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rolling-scopes-school/kotiknalune-RS2020Q1/tree/fancy-weather/issues"
+  },
+  "homepage": "https://github.com/rolling-scopes-school/kotiknalune-RS2020Q1/tree/fancy-weather#readme",
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.5",
+    "@fortawesome/fontawesome-free": "^5.13.0",
+    "autoprefixer": "^9.8.0",
+    "babel-jest": "^26.0.1",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.1.1",
+    "css-loader": "^3.5.2",
+    "eslint": "^6.8.0",
+    "eslint-loader": "^4.0.0",
+    "eslint-plugin-jest": "^23.10.0",
+    "file-loader": "^6.0.0",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.2.0",
+    "jest": "^26.0.1",
+    "json-loader": "^0.5.7",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-media-minmax": "^4.0.0",
+    "pug": "^2.0.4",
+    "regenerator-runtime": "^0.13.5",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.1.3",
+    "url-loader": "^4.1.0",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "write-file-webpack-plugin": "^4.5.1"
+  },
+  "dependencies": {
+    "toastify-js": "^1.8.0"
+  }
+}

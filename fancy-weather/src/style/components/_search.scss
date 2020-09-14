@@ -1,0 +1,29 @@
+.search__input {
+    width: 25rem;
+    height: $button-size - 0.4rem;
+    border-radius: $r 0 0 $r;
+    padding: 1.5rem;
+    background: transparentize($text-color, 1 - 0.75);
+    font-family: inherit;
+    font-size: 1.5rem;
+    color: #272727;;
+
+    @media (min-width: 320px) and (max-width: 1020px) {
+        width: 70%;
+    }
+    &:focus {
+        background: $text-color;
+    }
+}
+
+[type="search"] {
+    outline-offset: -2px;
+}
+
+.search-form {
+    display: flex;
+    @media (min-width: 320px) and (max-width: 1020px) {       
+        justify-content: center;
+        width: 100%;
+    }
+}

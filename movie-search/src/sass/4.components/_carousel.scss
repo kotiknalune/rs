@@ -1,0 +1,277 @@
+.swiper-container {
+  width: 85%;
+  height: 450px;
+
+  @include breakpoint('xl') {
+	height:650px;
+	}
+}
+
+.swiper-slide {
+  //width:300px !important; 
+  margin-right: 30px;
+  text-align: center;
+  font-size: 2rem;
+  background: $slide-bg;
+
+  @include flex(column, center);
+
+  @include breakpoint('xs') {
+ //  width:272px !important;
+  }
+
+  @include breakpoint('xl') {
+ //   width:385.5px !important;
+  }
+}
+
+.swiper-wrapper {
+  height: 100%;
+}
+
+.swiper-button-prev {
+  left: 30px;
+  right: auto;
+  @include breakpoint('xs') {
+    left: 0px;
+  }
+}
+
+.swiper-button-next {
+  right: 30px;
+  left: auto;
+  @include breakpoint('xs') {
+    right: 0px;
+  }
+}
+
+.swiper-button-prev, .swiper-button-next {
+  color: $highlight-color;
+  @include breakpoint('xs') {
+    top:55%;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background: $highlight-color;
+}
+
+.search-info {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 230%;
+
+  @include breakpoint('xl') {
+      width: 236%;
+  }
+
+  @include breakpoint('xs') {
+    width: 165%;
+  }
+
+  @include breakpoint('m') {
+    width: 220%;
+  }
+
+  @include breakpoint('s') {
+    width: 205%;
+  }
+}
+
+.total-results, .current-page {
+  text-align: center;
+  color: $text-color;
+  font-size: 1.5rem;
+  line-height: 4rem;
+
+   @include breakpoint('xs') {
+      font-size: 1.2rem;
+      line-height: 3.5rem;
+    }
+}
+
+.alert {
+  position: absolute;
+  z-index: 1;
+  padding: 20px 40px;
+  background: #ffd230;
+  color: black;
+  border-radius: 10px;
+  top: 45%;
+  box-shadow: 0px 0px 30px 5px #83e8ff85;
+
+  & p:first-child {
+    font-size: 2rem;
+  }
+}
+
+.current-page {
+  color: $slide-bg;
+  background: $highlight-color;
+  height: 25px;
+  line-height: 2.5rem;
+  padding: 0px 10px;
+  border-radius: 5px;
+}
+
+.poster-wrapper {
+  width: 230px;
+  height: 350px;
+
+  @include breakpoint('xl') {
+    width: 330px;
+    height: 520px;
+  }
+  
+  & img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+
+    &:before, &:after {
+      display: block;
+      position: absolute;
+      top: 55px;
+      left: 20px;
+      height: 350px;
+      width: 83%;
+
+      @include breakpoint('xl') {
+        top:70px;
+      }
+    }
+
+    &:before { 
+      content: " ";
+      background-color:$slide-bg;
+      border: 1px dotted $highlight-color;
+    }
+    
+    &:after { 
+      content: "No poster for: \A" attr(alt);
+      white-space: pre-wrap;
+      top: 85px;
+      font-size: 2rem;
+      color: $highlight-color;
+      text-align: center;
+
+      @include breakpoint('xl') {
+        top:100px;
+      }
+    }
+  }
+}
+
+.movie-info {
+  @include flex(row,space-between);
+
+  width: 100%;
+  position: relative;
+  bottom: -6px;
+
+  @include breakpoint('xl') {
+    bottom: -10px;
+  }
+}
+.movie-title {
+  margin: 0;
+  max-width: 80%;
+
+  font-size: 2rem;
+  @extend%hide-overflow;
+  text-transform: uppercase;
+  font-weight: 300;
+  line-height: 4rem;
+  color: $text-color;
+  letter-spacing: 0.05em;
+
+  @include breakpoint('xl') {
+    font-size: 2.5rem;
+  }
+  
+  & a {
+    font-size: inherit;
+    transition: 0.5s ease;
+    &:hover{
+      color: $highlight-color;
+    }
+  }
+}
+
+.movie-year, .movie-rating {
+  font-size: 1.8rem;
+  line-height: 3rem;
+  color:$text-color;
+  margin-left: 30px;
+
+  @include breakpoint('xl') {
+    font-size: 2.5rem;
+  }
+}
+
+.movie-rating {
+  &:before {
+    @extend%pseudoelement;
+
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+
+    background-image: url(https://svgshare.com/i/K_S.svg);
+    @extend%background-img;
+    background-size: cover;
+  }
+}
+
+.movie-more a {
+  font-size: 1.6rem;
+  background: $highlight-color;
+  padding: 5px 10px;
+  color: $slide-bg;
+  left: 9px;
+  position: relative;
+  & span {
+    margin-left: 3px;
+  }
+}
+
+.movie-more:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -6.5px;
+  right: -9px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 0 0 9px;
+  border-color: transparent transparent transparent #9e8323;
+}
+
+[data-tooltip] { 
+  &::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    background-color: $slide-bg;
+    font-size: 1.4rem;
+    padding: 2px;
+    opacity: 0;
+    top: 50px;
+    transition: opacity 0.3s;
+    z-index: 400;
+
+    @include breakpoint('xl') {
+     font-size: 1.8 rem;
+     padding: 2px 10px;
+     top: 70px;
+     left: 35px;
+    }
+  }
+  
+  &:hover::before {
+    opacity: 1;
+  }
+}

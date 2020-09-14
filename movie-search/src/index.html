@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1"/>
+    <link href="https://fonts.googleapis.com/css?family=Lato&amp;display=swap" rel="stylesheet"/>
+    <title>Movie Finder</title>
+  </head>
+  <body class="pattern-grid-lg">
+    <div class="splash pattern-grid-lg"></div>
+    <header class="header">
+      <h1 class="title header__title" data-text="Movie Finder"> <a href="/">Movie Finder</a></h1>
+    </header>
+    <main class="main">
+      <div class="search-container">
+        <p class="info"></p>
+        <form class="search-form" id="search-form">
+          <input type="text" id="search-bar" placeholder="Let's find a movie..." autocomplete="off" autofocus="autofocus"/>
+          <button class="reset" type="button"><i class="fas fa-times"></i></button>
+          <button class="submit" type="button"><span class="fa fa-search"></span></button>
+          <button class="mic" type="button"><i class="fas fa-microphone"></i></button>
+          <button class="keyboard" type="button"><i class="fas fa-keyboard"></i></button>
+        </form>
+      </div>
+      <div class="virtual-keyboard"></div>
+      <div class="search-text"></div>
+      <div class="swiper-container">
+        <div class="loader-wrapper show-loader">
+          <div class="loader"><span></span></div>
+        </div>
+        <div class="swiper-wrapper"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="search-info">
+        <p class="total-results"></p>
+        <p class="current-page"></p>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer__copyright"><a href="https://rs.school/" target="_blank">RS School 2020Q1</a></div>
+      <div class="contacts"><a class="github" href="https://github.com/kotiknalune" target="_blank">kotiknalune</a></div>
+    </footer>
+  </body>
+</html>

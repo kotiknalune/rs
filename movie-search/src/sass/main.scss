@@ -1,0 +1,27 @@
+// 0. Abstracts
+@import '0.abstracts/variables';
+@import '0.abstracts/mixins';
+
+// 1. Vendors
+@import '1.vendors/pattern';
+@import '1.vendors/swiper';
+
+// 2. Base
+@import '2.base/animations';
+@import '2.base/typography';
+@import '2.base/global';
+
+// 3. Layout
+@import '3.layout/header';
+@import '3.layout/footer';
+
+// 4. Components
+@import '4.components/carousel';
+@import '4.components/search-bar';
+@import '4.components/modal';
+@import '4.components/splash';
+@import '4.components/keyboard';
+@import '4.components/loader';
+
+// 5. Pages
+@import '5.pages/index';
